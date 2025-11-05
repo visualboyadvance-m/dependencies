@@ -194,6 +194,7 @@ typedef const WAVEFORMATEXTENSIBLE *PCWAVEFORMATEXTENSIBLE, *LPCWAVEFORMATEXTENS
  *
  ***************************************************************************/
 
+#ifdef _MSC_VER // __declspec(uuid) is only available in MSVC
 #ifdef __cplusplus // uuid() and __uuidof() are only available in C++
 
     #ifndef KSDATAFORMAT_SUBTYPE_PCM
@@ -211,6 +212,7 @@ typedef const WAVEFORMATEXTENSIBLE *PCWAVEFORMATEXTENSIBLE, *LPCWAVEFORMATEXTENS
         #define KSDATAFORMAT_SUBTYPE_IEEE_FLOAT __uuidof(KSDATAFORMAT_SUBTYPE_IEEE_FLOAT_STRUCT)
     #endif
 
+#endif
 #endif
 
 
